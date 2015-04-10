@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/item_tv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/item_status"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:layout_toRightOf="@+id/item_status"
+        android:text="Lorem ipsum dolor equat"
+        android:textColor="@color/text_color_letra"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/item_tv_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_tv_titulo"
+        android:layout_below="@+id/item_tv_titulo"
+        android:textColor="@color/text_color_letra"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:text="11/02/2015" />
+    
+    <TextView
+        android:id="@+id/item_tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_tv_titulo"
+        android:layout_below="@+id/item_tv_fecha"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:textColor="@color/text_color_letra"
+        android:text="Lorem ipsum dolor" />
+
+    <ImageView
+        android:id="@+id/item_status"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/amarillo" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/item_status"
+        android:padding="10dp"
+        android:src="@drawable/ico_flecha_gris" />
+
+</RelativeLayout>

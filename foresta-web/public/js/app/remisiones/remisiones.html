@@ -1,0 +1,220 @@
+<menu>
+	<div class="tab">Detalles</div>
+	<div class="tab">Mapa</div>
+	<div class="clearfix"></div>
+	<div id="cont-menu">
+		<label class="mnu-selector">
+			<select ng-model="tipo" ng-change="filtrar()">
+				<option ng-selected="true" value="Remisión">Remisión</option>
+				<option value="Reembarque">Reembarque</option>
+			</select>
+		</label>
+		<input type="text" placeholder="Buscar por UUID" style="width:250px" class="margen-izq-50" ng-model="query" ng-enter="filtrar()">
+		<span class="margen-izq-50">Estatus:</span>
+		<label for="todas">Todas</label>
+		<input type="radio" ng-change="filtrar()" id="todas" name="estatus" ng-model="estatus" value="todas" ng-checked="true">
+		
+		<label for="enviado">Enviado</label>
+		<input type="radio" ng-change="filtrar()" id="enviado" name="estatus" ng-model="estatus" value="Enviada">
+		
+		<label for="entregado">Entregado</label>
+		<input type="radio" ng-change="filtrar()" id="entregado" name="estatus" ng-model="estatus" value="Entregado">
+		
+		<label for="noEntregado">No Entregado</label>
+		<input type="radio" ng-change="filtrar()" id="noEntregado" name="estatus" ng-model="estatus" value="NoEntregado">
+		
+		<label for="cancelado">Cancelado</label>
+		<input type="radio" ng-change="filtrar()" id="cancelado" name="estatus" ng-model="estatus" value="Cancelado">
+	</div>
+</menu>
+<div class="seccion">
+	<strong ng-show="!vm.remisiones">Cargando...</strong>
+	<h1>Remisiones y Reembarques</h1>
+	<div id="cont-insights">
+		<div class="insight">
+			<div class="insight-titulo">Remisiones</div>
+			<div class="insight-dato">{{vm.totalRemisiones}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Reembarques</div>
+			<div class="insight-dato">{{vm.totalReembarques}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Entregadas</div>
+			<div class="insight-dato">{{vm.totalEntregadas}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">No entregadas</div>
+			<div class="insight-dato">{{vm.totalNoEntregadas}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Canceladas</div>
+			<div class="insight-dato">{{vm.totalCanceladas}}</div>
+		</div>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Tipo</th>
+				<th>Estatus</th>
+				<th>Salida</th>
+				<th>Entrega</th>
+				<th>Tit. Arpvechamiento</th>
+				<th>CAT</th>
+				<th>Origen</th>
+				<th>Destino</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="remision in vm.remisiones | orderBy:'uuid'" ng-click="vm.viewItem(remision)" style="cursor:pointer;">
+				<td><span ng-show="remision.tipo" ng-bind="remision.tipo" ></span></td>
+				<td><span ng-show="remision.estatus" ng-bind="remision.estatus" ></span></td>
+				<td><span ng-show="remision.remitente.fecha | date" ng-bind="remision.remitente.fecha | date" ></span></td>
+				<td><span ng-show="remision.remitente.vigencia | date" ng-bind="remision.remitente.vigencia | date" ></span></td>
+				<td><span ng-show="remision.remitente.nombreCompleto" ng-bind="remision.remitente.nombreCompleto" ></span></td>
+				<td><span ng-show="remision.destinatario.denominacionORazonSocial" ng-bind="remision.destinatario.denominacionORazonSocial" ></span></td>
+				<td><span ng-show="remision.remitente.origenMateriaPrima" ng-bind="remision.remitente.origenMateriaPrima" ></span></td>
+				<td><span ng-show="remision.remitente.estado" ng-bind="remision.remitente.estado" ></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/ng-template" id="item.html">
+    <h1>Folio progresivo: <span ng-bind="vm.activeItem.folioProgresivo"></span></h1>
+    <div style="background: #fff; padding: 10px; border: solid 1px #ddd;">
+    <strong>Folio:</strong> <span ng-bind="vm.activeItem.folio"></span><br/>
+    <strong>UUID:</strong> <span ng-bind="vm.activeItem.uuid"></span><br/>
+    <strong>Estatus:</strong> <span ng-bind="vm.activeItem.estatus"></span><br/>
+    <strong>Fecha de registró:</strong> <span ng-bind="vm.activeItem.fechaRegistro | date"></span><br/>
+    <strong>Válido hasta:</strong> <span ng-bind="vm.activeItem.fechaRegistro | date"></span><br/>
+    </div>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Remitente
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+		        <dl class="dl-horizontal">
+					<dt>UUID</dt>
+					<dd ng-bind="vm.activeItem.remitente.uuid"></dd>
+					<dt>RFN</dt>
+					<dd ng-bind="vm.activeItem.remitente.rfn"></dd>
+					<dt>Tipo de resolución</dt>
+					<dd ng-bind="vm.activeItem.remitente.tipoResolucion"></dd>
+					<dt>Anualidad</dt>
+					<dd ng-bind="vm.activeItem.remitente.anualidad"></dd>
+					<dt>Volumen autorizado</dt>
+					<dd ng-bind="vm.activeItem.remitente.volumenAutorizadoAnualidad"></dd>
+					<dt>Genero y/o producto</dt>
+					<dd ng-bind="vm.activeItem.remitente.generoYOProducto"></dd>
+					<dt>Nombre completo</dt>
+					<dd ng-bind="vm.activeItem.remitente.nombreCompleto"></dd>
+					<dt>Estado</dt>
+					<dd ng-bind="vm.activeItem.remitente.estado"></dd>
+					<dt>Municipio</dt>
+					<dd ng-bind="vm.activeItem.remitente.municipio"></dd>
+				</dl>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingTwo">
+	      <h4 class="panel-title">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Destinatario
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="panel-body">
+	        <dl class="dl-horizontal">
+					<dt>UUID</dt>
+					<dd ng-bind="vm.activeItem.destinatario.uuid"></dd>
+					<dt>Nombre completo</dt>
+					<dd ng-bind="vm.activeItem.destinatario.nombreCompleto"></dd>
+					<dt>Estado</dt>
+					<dd ng-bind="vm.activeItem.destinatario.estado"></dd>
+					<dt>Municipio</dt>
+					<dd ng-bind="vm.activeItem.destinatario.municipio"></dd>
+					<dt>Domicilio</dt>
+					<dd ng-bind="vm.activeItem.destinatario.domicilioDelDestino"></dd>	
+				</dl>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingThree">
+	      <h4 class="panel-title">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Transporte
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="panel-body">
+	      	<div class="texto-centro">
+	      		<img src="https://s3.amazonaws.com/foresta/foto-camion.jpg" height="120" />
+	      	</div>
+	        <dl class="dl-horizontal">
+					<dt>UUID</dt>
+					<dd ng-bind="vm.activeItem.transporte.uuid"></dd>
+					<dt>Medio de transporte</dt>
+					<dd ng-bind="vm.activeItem.transporte.medioDeTransporte"></dd>
+					<dt>Propietario</dt>
+					<dd ng-bind="vm.activeItem.transporte.propietario"></dd>
+					<dt>Marca</dt>
+					<dd ng-bind="vm.activeItem.transporte.marca"></dd>
+					<dt>Tipo</dt>
+					<dd ng-bind="vm.activeItem.transporte.tipo"></dd>
+					<dt>Modelo</dt>
+					<dd ng-bind="vm.activeItem.transporte.modelo"></dd>
+					<dt>Capacidad</dt>
+					<dd ng-bind="vm.activeItem.transporte.capacidad"></dd>
+					<dt>Placas o matrícula</dt>
+					<dd ng-bind="vm.activeItem.transporte.placasOMatricula"></dd>
+				</dl>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingThree">
+	      <h4 class="panel-title">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseCuatro" aria-expanded="false" aria-controls="collapseCuatro">
+	          Transportista
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseCuatro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="panel-body">
+	      	<div class="texto-centro">
+	      		<img src="https://s3.amazonaws.com/foresta/foto-tansportista.jpg" height="120" />
+	      	</div>
+	        <dl class="dl-horizontal">
+					<dt>UUID</dt>
+					<dd ng-bind="vm.activeItem.transportista.uuid"></dd>
+					<dt>Nombre</dt>
+					<dd ng-bind="vm.activeItem.transportista.Nombre"></dd>
+					<dt>Apellido paterno</dt>
+					<dd ng-bind="vm.activeItem.transportista.apellidoPaterno"></dd>
+					<dt>Apellido materno</dt>
+					<dd ng-bind="vm.activeItem.transportista.apellidoMaterno"></dd>
+					<dt>Estado</dt>
+					<dd ng-bind="vm.activeItem.transportista.estado"></dd>
+					<dt>Municipio</dt>
+					<dd ng-bind="vm.activeItem.transportista.municipio"></dd>
+					<dt>CP</dt>
+					<dd ng-bind="vm.activeItem.transportista.codigoPostal"></dd>
+					<dt>Colonia</dt>
+					<dd ng-bind="vm.activeItem.transportista.colonia"></dd>
+				</dl>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</script>

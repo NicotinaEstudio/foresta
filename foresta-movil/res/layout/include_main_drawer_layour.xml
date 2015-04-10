@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"    
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/img_fondo"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_luncher" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_face"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_margin_default"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_luncher" />
+
+            <TextView
+                android:id="@+id/tv_nombre_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin_default"
+                android:text="Julian Suárez Navarrete"
+                android:textColor="@color/text_color_drawer_header"
+                android:textSize="@dimen/text_sise_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_roll_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Titular de aprovechamiento"
+                android:textColor="@color/text_color_drawer_header"
+                android:textSize="@dimen/text_size_subtitle" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/navigation_drawer_padding"
+        android:paddingTop="@dimen/navigation_drawer_padding" >
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+			
+             <ImageView
+                 android:layout_width="18dp"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"                
+                 android:src="@drawable/ico_usuario" />
+             
+            <Button
+                android:paddingLeft="4dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="start|center"
+                android:text="@string/text_for_mis_datos"
+                android:textColor="@color/text_color_drawer_content"
+                android:textSize="@dimen/text_size_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ico_remisiones" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="start|center"
+                android:onClick="crearRemision"
+                android:paddingLeft="4dp"
+                android:text="@string/text_for_Remisiones"
+                android:textColor="@color/text_color_drawer_content"
+                android:textSize="@dimen/text_size_content" />
+        </LinearLayout>
+		
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+
+		    <ImageView
+		        android:layout_width="18dp"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:src="@drawable/ico_vehiculo" />
+
+		    <Button
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="#fff"
+		        android:gravity="start|center"
+		        android:paddingLeft="4dp"
+		        android:text="@string/text_for_vehiculos"
+		        android:textColor="@color/text_color_drawer_content"
+		        android:textSize="@dimen/text_size_content" />
+		</LinearLayout>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="start|center"
+            android:paddingLeft="22dp"
+            android:text="@string/text_for_acerca_de"
+            android:textColor="@color/text_color_drawer_content"
+            android:textSize="@dimen/text_size_content" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="start|center"
+            android:text="@string/text_for_ayuda"
+            android:textColor="@color/text_color_drawer_content"
+            android:paddingLeft="22dp"
+            android:textSize="@dimen/text_size_content" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="start|center"
+            android:text="@string/text_for_cerrar_sesion"
+            android:textColor="@color/text_color_drawer_content"
+            android:onClick="cerrarSesion"
+            android:paddingLeft="22dp"
+            android:textSize="@dimen/text_size_content" />
+    </LinearLayout>
+
+</LinearLayout>

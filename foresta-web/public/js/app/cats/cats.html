@@ -1,0 +1,66 @@
+<menu>
+	<div class="tab">Detalles</div>
+	<div class="tab">Mapa</div>
+	<div class="clearfix"></div>
+	<div id="cont-menu">
+		<label class="mnu-selector">
+			<select>
+				<option value="cat">Almacenamiento</option>
+				<option value="reembarque">Transformación</option>
+			</select>
+		</label>
+		<input type="text" placeholder="Buscar" class="margen-izq-50" >
+	</div>
+</menu>
+<div class="seccion">
+	<strong ng-show="!vm.cats">Cargando...</strong>
+	<h1>Centros de Almacenamiento y Transformación</h1>
+	<div id="cont-insights">
+		<div class="insight">
+			<div class="insight-titulo">Centros de Almacenamiento y Transforamción</div>
+			<div class="insight-dato">{{vm.totalCATS}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Almacenamiento</div>
+			<div class="insight-dato">{{vm.totalAlmacenamiento}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Transformación</div>
+			<div class="insight-dato">{{vm.totalTransformacion}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Capacidad de almacenamiento</div>
+			<div class="insight-dato">{{vm.totalCapAlmacenamiento}}</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Capacidad de transformación</div>
+			<div class="insight-dato">{{vm.totalCapTransformacion}}</div>
+		</div>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Denominación</th>
+				<th>Estado</th>
+				<th>Municipio</th>
+				<th>Domicilio</th>
+				<th>Responsable</th>
+				<th>Tipo</th>
+				<th>Almacena</th>
+				<th>Capacidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="cat in vm.cats | orderBy:'uuid'">
+				<td><span ng-show="cat.denominacionORazonSocial" ng-bind="cat.denominacionORazonSocial" ></span></td>
+				<td><span ng-show="cat.estado" ng-bind="cat.estado" ></span></td>
+				<td><span ng-show="cat.municipio" ng-bind="cat.municipio" ></span></td>
+				<td><span ng-show="cat.domicilio" ng-bind="cat.domicilio" ></span></td>
+				<td><span ng-show="cat.responsable" ng-bind="cat.responsable" ></span></td>
+				<td><span ng-show="cat.tipo" ng-bind="cat.tipo" ></span></td>
+				<td><span ng-show="cat.almacena" ng-bind="cat.almacena" ></span></td>
+				<td><span ng-show="cat.capacidadAlmacenamiento" ng-bind="cat.capacidadAlmacenamiento" ></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

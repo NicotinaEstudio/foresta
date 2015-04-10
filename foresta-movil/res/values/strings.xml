@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RetoForestal</string>
+    <string name="server">http://foresta.herokuapp.com/api</string>
+    <string name="phoneNumber">+12109609659</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_authentication_title">Ingrese sus credenciales</string>
+    <string name="activity_registro_transportista_title">Registro de Transportista</string>
+    <string name="activity_registro_transportes_title">Registro de Transportes</string>
+    <string name="activity_registro_remisiones_title">Registro de Remisión</string>
+    <string name="activity_remisiones_title">Remisiones</string>
+    <string name="activity_authentication_btn_login">Iniciar sesión</string>
+    <string name="text_for_mis_datos">Mis Datos</string>
+    <string name="text_for_Remisiones">Remisiones</string>
+    <string name="text_for_vehiculos">Vehículos</string>
+    <string name="text_for_acerca_de">acerca de</string>
+    <string name="text_for_ayuda">Ayuda</string>
+    <string name="text_for_cerrar_sesion">Cerrar sesión</string>
+    <string name="explanation">Settings</string>
+
+    <string-array name="tipo_transporte">
+        <item>Tipo 1</item>
+        <item>Tipo 2</item>
+    </string-array>
+    <string-array name="medio_transporte">
+        <item>Camiones</item>
+        <item>Camioneta</item>
+        <item>Tractores</item>
+        <item>Semi-remolques</item>
+        <item>Ferrocarril</item>
+        <item>Barco</item>
+    </string-array>
+    <string-array name="tipo_materia">
+        <item>Pino ocarpa</item>
+    </string-array>
+
+    <string name="title_activity_test_sms">TestSMSActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_inspector_home">Foresta Movil</string>
+
+</resources>

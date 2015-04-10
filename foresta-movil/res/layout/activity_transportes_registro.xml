@@ -1,0 +1,118 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.nicotinaestudio.forestamovil.ui.TransporteRegistrarActivity" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        
+        
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp" 
+                android:orientation="vertical" >
+
+                
+                <ImageView
+                    android:id="@+id/img_ic_transporte"
+                    android:layout_width="fill_parent"
+                    android:layout_height="145dp"
+                    android:onClick="capturarFoto"
+                    android:src="@drawable/ico_camara" />
+
+                <Spinner
+                    android:id="@+id/sp_medio"
+                    android:layout_width="match_parent"
+                    android:entries="@array/medio_transporte"
+                    android:layout_height="wrap_content" />
+
+                
+                <EditText
+                    android:id="@+id/et_propietario"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Propietario" />
+
+                <Spinner
+                    android:id="@+id/sp_tipo"
+                    android:entries="@array/tipo_transporte"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+                <EditText
+                    android:id="@+id/et_marca"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Marca" />
+
+                <EditText
+                    android:id="@+id/et_modelo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Modelo" >
+                </EditText>
+
+                <EditText
+                    android:id="@+id/et_capacidad"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Capacidad" />
+
+                <EditText
+                    android:id="@+id/et_matricula"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Matricula" />
+
+                                
+                <Button 
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnGuardar_Click"                    
+                    style="@style/ButtonText"
+                    android:text="Registrar"
+                    />
+                
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"            
+            android:layout_height="8dp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/navDrawerHome"
+        
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#fafafa"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:orientation="vertical" >
+        
+        <include layout="@layout/include_main_drawer_layour" />
+        
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

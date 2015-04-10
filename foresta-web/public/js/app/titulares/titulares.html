@@ -1,0 +1,163 @@
+<menu>
+	<div class="tab">Detalles</div>
+	<div class="tab">Mapa</div>
+	<div class="clearfix"></div>
+	<div id="cont-menu">
+		<input type="text" placeholder="Buscar" class="margen-izq-50" >
+	</div>
+</menu>
+<div class="seccion">
+	<strong ng-show="!vm.titulares">Cargando...</strong>
+	<h1>Titulares de aprovechamiento</h1>
+	<div id="cont-insights">
+		<div class="insight">
+			<div class="insight-titulo">Titulares</div>
+			<div class="insight-dato">1533</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Folios Autorizados</div>
+			<div class="insight-dato">1533</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Volumen Amparado</div>
+			<div class="insight-dato">1533</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Saldos</div>
+			<div class="insight-dato">1533</div>
+		</div>
+		<div class="insight">
+			<div class="insight-titulo">Mas explotado</div>
+			<div class="insight-dato">Pino</div>
+		</div>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Estado</th>
+				<th>Municipio</th>
+				<th>Folios Autorizados</th>
+				<th>Volumen Amparado</th>
+				<th>Saldo</th>
+				<th>Materia Prima</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="titular in vm.titulares | orderBy:'uuid'" ng-click="vm.viewItem(titular)" style="cursor:pointer;">
+				<td><span ng-show="titular.nombre" ng-bind="titular.nombre" ></span></td>
+				<td><span ng-show="titular.apellidoPaterno" ng-bind="titular.apellidoPaterno" ></span></td>
+				<td><span ng-show="titular.estado" ng-bind="titular.estado" ></span></td>
+				<td><span ng-show="titular.municipio" ng-bind="titular.municipio" ></span></td>
+				<td><span ng-show="titular.foliosAutorizados" ng-bind="titular.foliosAutorizados" ></span></td>
+				<td><span ng-show="titular.volumenYOPesoamparado" ng-bind="titular.volumenYOPesoamparado" ></span></td>
+				<td><span ng-show="titular.saldo" ng-bind="titular.saldo" ></span></td>
+				<td><span ng-show="titular.materiaPrima" ng-bind="titular.materiaPrima" ></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/ng-template" id="item.html">
+    <h1>Titular de aprovechamiento</h1>
+    <div style="background: #fff; padding: 10px; border: solid 1px #ddd;">
+    <div class="texto-centro">
+  		<img src="https://s3.amazonaws.com/foresta/foto-titular.jpg" height="120" />
+  	</div>
+  	<br/>
+    <strong>UUID:</strong> <span ng-bind="vm.activeItem.uuid"></span><br/>
+    <strong>Nombre:</strong> <span ng-bind="vm.activeItem.nombre"></span> <span ng-bind="vm.activeItem.apellidoPaterno"></span> <span ng-bind="vm.activeItem.apellidoMaterno"></span><br/>
+    <strong>Registro SIEM:</strong> <span ng-bind="vm.activeItem.registroSiem"></span><br/>
+    <strong>Folios autorizados:</strong> <span ng-bind="vm.activeItem.foliosAutorizados"></span><br/>
+    <strong>Volumen y/o peso amparado:</strong> <span ng-bind="vm.activeItem.volumenYOPesoamparado"></span><br/>
+    <strong>Saldo:</strong> <span ng-bind="vm.activeItem.saldo"></span><br/>
+    </div>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Datos personales
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+		        <dl class="dl-horizontal">
+					<dt>Estado</dt>
+					<dd ng-bind="vm.activeItem.estado"></dd>
+					<dt>Municipio</dt>
+					<dd ng-bind="vm.activeItem.municipio"></dd>
+					<dt>Código postal</dt>
+					<dd ng-bind="vm.activeItem.codigoPostal"></dd>
+					<dt>CURP</dt>
+					<dd ng-bind="vm.activeItem.curp"></dd>
+					<dt>Calle</dt>
+					<dd ng-bind="vm.activeItem.calle"></dd>
+					<dt>Colonia</dt>
+					<dd ng-bind="vm.activeItem.colonia"></dd>
+					<dt>Correo electrónico</dt>
+					<dd ng-bind="vm.activeItem.correoElectronico"></dd>
+				</dl>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingTwo">
+	      <h4 class="panel-title">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Transportes
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="panel-body">
+	      	<div class="texto-centro">
+	      		<img src="https://s3.amazonaws.com/foresta/foto-camion.jpg" height="120" />
+	      	</div>
+	      	<dl ng-repeat="transporte in vm.activeItem.transportes | orderBy:'uuid'" class="dl-horizontal">
+	      		<dt>Tipo</dt>
+				<dd ng-bind="transporte.tipo"></dd>
+				<dt>Marca</dt>
+				<dd ng-bind="transporte.marca"></dd>
+				<dt>Modelo</dt>
+				<dd ng-bind="transporte.modelo"></dd>
+				<dt>Capacidad</dt>
+				<dd ng-bind="transporte.capacidad"></dd>
+				<dt>Matricula</dt>
+				<dd ng-bind="transporte.placasOMatricula"></dd>	
+				<dt>Propietario</dt>
+				<dd ng-bind="transporte.propietario"></dd>	
+				<hr>
+			</dl>	
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingThree">
+	      <h4 class="panel-title">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Transportistas
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="panel-body">
+	      	<div class="texto-centro">
+	      		<img src="https://s3.amazonaws.com/foresta/foto-tansportista.jpg" height="120" />
+	      	</div>
+	      	<dl ng-repeat="transportista in vm.activeItem.transportistas | orderBy:'uuid'" class="dl-horizontal">
+	      		<dt>Nombre</dt>
+				<dd><span ng-bind="transportista.Nombre"></span> <span ng-bind="transportista.apellidoPaterno"></span> <span ng-bind="transportista.apellidoMaterno"></span></dd>
+				<dt>UUID</dt>
+				<dd ng-bind="transportista.uuid"></dd>
+				<dt>Dirección</dt>
+				<dd><span ng-bind="transportista.calle"></span> <span ng-bind="transportista.numero"></span>, <span ng-bind="transportista.colonia"></span>, <span ng-bind="transportista.codigoPostal"></span>, <span ng-bind="transportista.municipio"></span> <span ng-bind="transportista.estado"></span></dd>
+				<hr>
+			</dl>	
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</script>

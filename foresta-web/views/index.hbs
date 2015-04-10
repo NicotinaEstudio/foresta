@@ -1,0 +1,11 @@
+<div id="form-autenticacion">
+<img src="/images/logo-foresta-login.png" />
+<h1>INICIO DE SESIÓN</h1>
+<form method="POST" action="/usuarios/autenticacion">
+    <input id="correoElectronico" name="correoElectronico" type="text" placeholder="Correo electrónico" value="chernandez@nicotinaestudio.mx" /><br/>
+    <input id="contrasenia" name="contrasenia" type="password" placeholder="Contraseña" value="123456"/><br/>
+    <button type="submit">ENTRAR</button><br/>
+    <div style="color:red;">{{error}}</div><br/>
+    ¿Olvidaste tu contraseña?
+</form>
+</div>

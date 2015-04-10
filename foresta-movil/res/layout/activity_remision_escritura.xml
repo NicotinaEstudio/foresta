@@ -1,0 +1,219 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nicotinaestudio.forestamovil.ui.InspectorHomeActivity" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="218dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explanation" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start write modus" />
+
+            <EditText
+                android:id="@+id/mime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mime-type"
+                android:text="text/plain" />
+
+            <EditText
+                android:id="@+id/value"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Value"
+                android:text="11111111-1111-1111-1111-111111111114|Enviada|El chofer no trae identificación|Remisión|12343|88|TA|11111111-1111-1111-1111-111111111113|Pedro|Michoacán|Morelia|58000|Centro
+|TE|11111111-1111-1111-1111-111111111112|Camion|José Antonio Hernández Campos|Honda|Torton|MX-6|200 Toneladas|HEDMD-873
+|SA|5000|100000
+|MP|400|Madera en rollo - Pino|100000|M3
+|DE|11111111-1111-1111-1111-111111111115|MADERERÍA LA CEIBITA|Michoacán|Morelia|CARRETERA FEDERAL MÉXICO-TAXCO S/N.COL ANGELES AMACUZAC,MORELOS|Juan Perez Soto
+|RE|11111111-1111-1111-1111-111111111111|Palos Altos|RFMNJFRJI9F|Titular de aprovechamiento|30000|4 de 10|Madera en rollo - Pino|Juan Sanchez Solomer
+|CR|2015-03-28T15:46:45.940Z" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/navDrawerHome"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#fafafa"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/img_fondo"
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_luncher" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/img_face"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_margin_default"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_luncher" />
+
+                <TextView
+                    android:id="@+id/tv_nombre_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_margin_default"
+                    android:text="Julian Suárez Navarrete"
+                    android:textColor="@color/text_color_drawer_header"
+                    android:textSize="@dimen/text_sise_title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_roll_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Titular de aprovechamiento"
+                    android:textColor="@color/text_color_drawer_header"
+                    android:textSize="@dimen/text_size_subtitle" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/navigation_drawer_padding"
+            android:paddingTop="@dimen/navigation_drawer_padding" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ico_usuario" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:gravity="start|center"
+                    android:paddingLeft="4dp"
+                    android:text="@string/text_for_mis_datos"
+                    android:textColor="@color/text_color_drawer_content"
+                    android:textSize="@dimen/text_size_content" />
+            </LinearLayout>
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:orientation="horizontal" > -->
+
+<!--                 <ImageView -->
+<!--                     android:layout_width="18dp" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_gravity="center_horizontal" -->
+<!--                     android:src="@drawable/ico_remisiones" /> -->
+
+<!--                 <Button -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="#fff" -->
+<!--                     android:gravity="start|center" -->
+<!--                     android:onClick="crearRemision" -->
+<!--                     android:paddingLeft="4dp" -->
+<!--                     android:text="@string/text_for_Remisiones" -->
+<!--                     android:textColor="@color/text_color_drawer_content" -->
+<!--                     android:textSize="@dimen/text_size_content" /> -->
+<!--             </LinearLayout> -->
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:orientation="horizontal" > -->
+
+<!--                 <ImageView -->
+<!--                     android:layout_width="18dp" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_gravity="center_horizontal" -->
+<!--                     android:src="@drawable/ico_vehiculo" /> -->
+
+<!--                 <Button -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="#fff" -->
+<!--                     android:gravity="start|center" -->
+<!--                     android:paddingLeft="4dp" -->
+<!--                     android:text="@string/text_for_vehiculos" -->
+<!--                     android:textColor="@color/text_color_drawer_content" -->
+<!--                     android:textSize="@dimen/text_size_content" /> -->
+<!--             </LinearLayout> -->
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="start|center"
+                android:paddingLeft="22dp"
+                android:text="@string/text_for_acerca_de"
+                android:textColor="@color/text_color_drawer_content"
+                android:textSize="@dimen/text_size_content" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="start|center"
+                android:paddingLeft="22dp"
+                android:text="@string/text_for_ayuda"
+                android:textColor="@color/text_color_drawer_content"
+                android:textSize="@dimen/text_size_content" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="start|center"
+                android:paddingLeft="22dp"
+                android:text="@string/text_for_cerrar_sesion"
+                android:onClick="cerrarSesion"
+                android:textColor="@color/text_color_drawer_content"
+                android:textSize="@dimen/text_size_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

@@ -5,14 +5,22 @@ README FORESTA
 El presente proyecto es un prototipo funcional para la final del Reto **#RetoForestal** y es desarrollado por [Nicotina Estudio](http://www.nicotinaestudio.com). 
 
 ##Descripción
-**FORESTA** tiene por objetivo...
+
+**FORESTA** será una plataforma en tiempo real de administración de información globalizada que almacenara toda la data de cada uno de los roles en un cluster de base de datos no relaciona (MongoDB).
+
+Los procesos se digitalizarán evitando el uso de papeleo. Funcionara para web (FORESTA) y teléfonos inteligentes Android (FORSTA Móvil - debido a su flexibilidad para trabajar con recursos de bajo nivel: SMS, NFS, RFID, Internet, Cámara Fotográfica, fácil transportación, popularidad y costo). FORESTA contará con una API REST que permitirá la comunicación con FORESTA Móvil.
+
+FORESTA Móvil podrá trabajar off-line ya que contará con una base de datos local para almacenar información propia del rol en uso y deberá sincronizarse automáticamente (al detectar conexión a internet) con FORESTA en un periodo máximo de 7 días.
+
+Cada transportista y vehículo de transporte deberá estar registrado en el sistema, los vehículos contarán con un TAG RFID el cual podrá ser escaneado por el inspector para obtener información acerca del embarque. A futuro se plantea instalar lectores RFID en casetas de cobranza para conocer la ubicación y movimientos de los transportes autorizados.
+
+FORESTA Móvil cumplirá con los requerimientos por rol de esta convocatoria y adicionará funcionalidades descritas mas adelante en esta presentación.
 
 ##Tecnología
 
-...
+**FORESTA** está desarrollado en MEAN Stack: aplicaciones web rápidas, robustas y mantenibles usando las tecnologías de MongoDB, Express, AngularJS y Node.js.
 
-##Funcionamiento
-**FORESTA** ...
+**FORESTA** está desarrollado con Android y hace uso de tecnologías como: NFC y RFID.
 
 ##Dependencias
 **WEB**
@@ -38,21 +46,28 @@ Clonar el repositorio en su computadora, para ejecutar el proyecto de forma loca
 Para publicar el sitio en Heroku:
 - Crear una APP en heroku ($heroku create)
 - Publicar hacia la APP ($git push heroku master)
+- Agregar una base de datos a la aplicación de hoerku con mongo lab
 - Abrir la aplicación en el navegador web ($heroku open)
 
+Para ejecutar la APP móvil
+- Importar el proyecto a Eclipse IDE
+- Compilar y ejecutar
+
 ##Screenshots
-![alt tag](https://s3.amazonaws.com/nicotina-estudio/retos-publicos/)
-![alt tag](https://s3.amazonaws.com/nicotina-estudio/retos-publicos/)
-![alt tag](https://s3.amazonaws.com/nicotina-estudio/retos-publicos/)
+![alt tag](https://s3.amazonaws.com/foresta/foresta-centros-almacenamiento.jpg)
+![alt tag](https://s3.amazonaws.com/foresta/foresta-materia-prima.jpg)
+![alt tag](https://s3.amazonaws.com/foresta/foresta-remision-detalle.jpg)
+![alt tag](https://s3.amazonaws.com/foresta/foresta-movil-login.jpg)
+![alt tag](https://s3.amazonaws.com/foresta/foresta-movil-alta-transporte.jpg)
 
 ##Demo
-- [http://descubriendo-tu-ruta.herokuapp.com](http://descubriendo-tu-ruta.herokuapp.com)
+- [http://foresta.herokuapp.com](http://foresta.herokuapp.com)
 
 ##¿Preguntas o problemas? 
 Mantenemos la conversación del proyecto en nuestra página de problemas [issues] (https://github.com/NicotinaEstudio/foresta/issues). Si usted tiene cualquier otra pregunta, nos puede contactar por correo <soporte@nicotinaestudio.mx>.
 
 ##Contribuye
-Para contribuir en el proyecto **Catalogarte** haga click en el siguiente enlace ([Contribuir](#))
+Para contribuir en el proyecto **FORESTA** haga click en el siguiente enlace ([Contribuir](#))
 
 ##Empresa
 

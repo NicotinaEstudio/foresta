@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nicotinaestudio.forestamovil"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.NFC" />
+    
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.AuthenticationActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.TransportistasRegistroActivity"
+            android:label="@string/activity_registro_transportista_title" >
+        </activity>
+        <activity
+            android:name=".ui.TransporteRegistrarActivity"
+            android:label="@string/activity_registro_transportes_title" >
+        </activity>
+        <activity
+            android:name=".ui.RemisionRegistroActivity"
+            android:label="@string/activity_registro_remisiones_title" >
+        </activity>
+        <activity
+            android:name=".ui.RemisionPaso1Activity"
+            android:label="@string/activity_registro_remisiones_title" >
+        </activity>
+        <activity
+            android:name=".ui.RemisionPaso2Activity"
+            android:label="@string/activity_registro_remisiones_title" >
+        </activity>
+        <activity
+            android:name=".ui.RemisionPaso3Activity"
+            android:label="@string/activity_registro_remisiones_title" >
+        </activity>
+        <activity
+            android:name=".ui.RemisionesActivity"
+            android:label="@string/activity_remisiones_title" >
+        </activity>
+        <activity
+            android:name="com.nicotinaestudio.forestamovil.ui.InspectorHomeActivity"
+            android:label="@string/title_activity_inspector_home" >
+            
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+            
+        </activity>
+        <activity
+            android:name="com.nicotinaestudio.forestamovil.ui.RemisionEscrituraNFC"
+            android:label="@string/activity_remisiones_title" >
+            
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+            
+        </activity>
+    </application>
+
+</manifest>

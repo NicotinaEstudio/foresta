@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- 	<color name="sa_green">#14a804</color> -->
+<!--     <color name="stacked_green">#118504</color> -->
+<!--     <color name="accent_green">#97e08f</color>     -->
+
+
+	<color name="text_color_drawer_header">#2b2b2b</color>
+	<color name="text_color_drawer_content">#3a3a3a</color>
+	<color name="text_color_letra">#343434</color>	
+	<color name="fondo_base">#4ea82c</color>	
+	<color name="fondo_base_font">#ffffff</color>
+	<color name="color_principal">#70a63b</color>
+	<color name="color_barra_2">#454545</color>
+	
+	
+</resources>
