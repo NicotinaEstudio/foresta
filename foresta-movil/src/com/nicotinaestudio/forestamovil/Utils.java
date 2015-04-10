@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 
 public final class Utils {
 	
-	public static final String s3IdentityPoolID = "us-east-1:3984eca8-dd73-4083-8cb1-e822de69ef28";
+	public static final String s3IdentityPoolID = "s3IdentityPoolID";
 	public static final String s3BucketName = "foresta";
 	
 	public static final String appLogName = "RetoForestal";
