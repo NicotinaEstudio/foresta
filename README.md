@@ -20,7 +20,9 @@ FORESTA Móvil cumplirá con los requerimientos por rol de esta convocatoria y a
 
 **FORESTA** está desarrollado en MEAN Stack: aplicaciones web rápidas, robustas y mantenibles usando las tecnologías de MongoDB, Express, AngularJS y Node.js.
 
-**FORESTA** está desarrollado con Android y hace uso de tecnologías como: NFC y RFID.
+**FORESTA MÓVIL** está desarrollado con Android y hace uso de tecnologías: NFC y RFID, cuando **FORESTA MÓVIL** no tenga acceso a internet dará el alta de remisiones por medio de SMS.
+
+Adicionalmente al dar de alta una remisión, esta se almacenará en un dispositivo NFC para poder ser revisada en cualquier momento por un inspector o en responsable del CAT cuando reciba la materia prima.
 
 ##Dependencias
 **WEB**
@@ -52,6 +54,10 @@ Para publicar el sitio en Heroku:
 Para ejecutar la APP móvil
 - Importar el proyecto a Eclipse IDE
 - Compilar y ejecutar
+
+##Video (funcionamiento)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=ewiKGGq5tSo" target="_blank"><img src="http://img.youtube.com/vi/ewiKGGq5tSo/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 
 ##Screenshots
 ![alt tag](https://s3.amazonaws.com/foresta/foresta-centros-almacenamiento.jpg)
