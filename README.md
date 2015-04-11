@@ -56,7 +56,7 @@ Para ejecutar la APP móvil
 - Compilar y ejecutar
 
 ##Video (funcionamiento)
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=ewiKGGq5tSo" target="_blank"><img src="http://img.youtube.com/vi/ewiKGGq5tSo/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=d3s9zIzvLmI" target="_blank"><img src="http://img.youtube.com/vi/d3s9zIzvLmI/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ##Screenshots
